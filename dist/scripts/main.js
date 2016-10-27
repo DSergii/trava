@@ -11,6 +11,7 @@ var TravaApp = {
 
 		this.tab = $('.nav-tabs').tab();
 		this.badgesCarousel = $('#badgesLvL1, #badgesLvL2, #badgesLvL3, #badgesLvL4').carousel({interval: false});
+		this.testimonialsCarousel = $('#testimonials').carousel({interval: 5000});
 		this.scrollTop();
 		this.dropDown();
 		this.checkitem();
@@ -77,7 +78,7 @@ var TravaApp = {
 
 	mobileSliderAdaptive: function() {
 
-		$('.carousel').each(function(){
+		$('.carousel:not(.main-page)').each(function(){
 			var carousel = $(this),
 				holder = carousel.find('.carousel-inner'),
 				badges = holder.find('.badge-item'),
