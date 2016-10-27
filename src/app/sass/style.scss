@@ -654,22 +654,20 @@ ul{
 }
 
 .index {
-	background: url(../img/main.jpg) no-repeat 0 0;
+	background: #ebebeb url(../img/main.jpg) no-repeat 0 0;
 	background-size: contain;
 
 	#header {
 		height: 96px;
-		background: -moz-linear-gradient(top, rgba(22,21,21,0.65) 0%, rgba(0,0,0,0) 100%);
-		background: -webkit-linear-gradient(top, rgba(22,21,21,0.65) 0%,rgba(0,0,0,0) 100%);
-		background: linear-gradient(to bottom, rgba(22,21,21,0.65) 0%,rgba(0,0,0,0) 100%);
 		border-bottom: 1px solid #3b3f3a;
 
 		.logo {
 			position: absolute;
-    		bottom: -51px;
+    		top: 29px;
     		left: -28px;
     		margin: 0;
     		width: auto;
+    		z-index: 10;
 
     		a{
     			font-size: 73px;
@@ -680,8 +678,38 @@ ul{
 
 		.holder {
 			background: none;
-			padding: 28px 0 14px;
+			padding: 28px 0 17px;
 			max-width: 1285px;
+			background: -moz-linear-gradient(top, rgba(22,21,21,0.65) 0%, rgba(0,0,0,0) 100%);
+			background: -webkit-linear-gradient(top, rgba(22,21,21,0.65) 0%,rgba(0,0,0,0) 100%);
+			background: linear-gradient(to bottom, rgba(22,21,21,0.65) 0%,rgba(0,0,0,0) 100%);
+			@include transition-element (background);
+		}
+
+		.gradient-box:after,
+		.gradient-box:before{
+			height: 96px;
+			width: calc((100% - 1284px) / 2);
+			background: -moz-linear-gradient(top, rgba(22,21,21,0.65) 0%, rgba(0,0,0,0) 100%);
+			background: -webkit-linear-gradient(top, rgba(22,21,21,0.65) 0%,rgba(0,0,0,0) 100%);
+			background: linear-gradient(to bottom, rgba(22,21,21,0.65) 0%,rgba(0,0,0,0) 100%);
+			@include transition-element (all);
+		}
+
+		&.fill {
+			.holder {
+				background: rgba(51,51,51, 1);
+			}
+
+			.gradient-box:before{
+				background-image: linear-gradient(to right, rgba(51,51,51,0) 0%, rgba(51,51,51,.3) 50%, rgba(51,51,51, 1) 95%, #333333 100%);
+				@include transition-element (all);
+
+			}
+			.gradient-box:after{
+				background-image: linear-gradient(to left, rgba(51,51,51, 0) 0%, rgba(51,51,51, .7) 50%,  rgba(51,51,51, 1) 95%, #333333 100%);
+				@include transition-element (all);
+			}
 		}
 
 		.nav.navbar-nav{
@@ -731,13 +759,11 @@ ul{
 				}
 			}
 		}
-
 	}
-
 	.welcome-box {
 		width: 100%;
 		max-width: 1285px;
-		margin: 0 auto;
+		margin: 10% auto 60px;
 		color: #fff;
 		text-align: center;
 
@@ -765,6 +791,7 @@ ul{
 			border: 3px solid #bec0c3;
 			border-radius: 50%;
 			margin: 0 auto 47px;
+			background: url(../img/sprite.png) no-repeat -291px -26px;
 		}
 
 		.hold-btn {
@@ -776,17 +803,11 @@ ul{
 
 	#content {
 		background: none;
-		margin-top: 180px;
+		//margin-top: 180px;
+		margin-top: 235px;
 		max-width: 100%;
 		padding-left:0;
 		padding-right: 0; 
-
-		.join-section {
-			width: 100%;
-			background-color: #ebebeb;
-
-			
-		}
 	}
 
 	section {
@@ -795,14 +816,26 @@ ul{
 		}
 
 		.hold-title {
-			padding-top: 30px;
+			//padding-top: 30px !important;
+			padding: 32px 65px 4px;
+			margin-bottom: 33px;
 			text-align: center;
+
+			&:after {
+				content: '';
+				width: 113px;
+				height: 2px;
+				background: #ffc746;
+				display: block;
+				margin: 0 auto;
+			}
 		}
 	}
 
 	h2{
 		font-size: 45px;
 		line-height: 47px;
+		margin-bottom: 24px;
 	}
 
 	.advantages-list {
@@ -815,24 +848,27 @@ ul{
 			vertical-align: top;
 			padding-top: 100px;
 			text-align: center;
-			width: 20%;
-			margin: 0 2%;
+			width: 18%;
+			margin: 0 2.2%;
 
 			.icon{
 				display: block;
 				background: url(../img/sprite.png) no-repeat 0 -136px;
 				margin: -90px auto 20px;
-				width: 78px;
+				width: 66px;
 				height: 65px;
 
 				&.community {
 					background-position-x: -96px;
+					width: 78px;
 				}
 				&.resources {
 					background-position-x: -199px;
+					width: 64px;
 				}
 				&.events {
 					background-position-x: -286px;
+					width: 61px;
 				}
 			}	
 
@@ -853,7 +889,8 @@ ul{
 	}
 
 	.join-section {
-		height: 932px;
+		background: #ebebeb;
+		padding-bottom: 102px;
 
 		.hold-carousel {
 			padding: 0;
@@ -977,21 +1014,23 @@ ul{
 
 	}
 
+	.benefits {
+		background: #fff;
+		padding-bottom: 90px;
+	}
+
 	.benefit-list{
-		margin: 0 -5px;
+		margin: 0 -2.5px;
 		padding: 0;
 		text-align: center;
 		overflow: hidden;
+		//height: 564px;
 
 		li{
-			/* display: inline-block;
-			vertical-align: top; */
-			float: left;
-			margin: 5px;
-			width: 32.6%;
+			margin: .18%;
+			width: 32.85%;
+			height: 280px;
 			position: relative;
-			display: table;
-			padding: 5%;
 			float: left;
 			-webkit-filter: grayscale(100%);
 	       -moz-filter: grayscale(100%);
@@ -1001,20 +1040,19 @@ ul{
 	        @include transition-element (all);
 
 			.title {
-				// position: absolute;
-				// right: 15%;
-				// left: 15%;
-				// bottom: 15%;
-				// top: 15%;
+				position: absolute;
+				right: 18.5%;
+			    left: 18.5%;
+			    bottom: 25%;
+			    top: 25%;
 				border: 2px solid #ababab;
-				display: table-cell;
-				width: 266px;
-				height: 141px;
-				padding: 0 20px;
-				vertical-align: middle;
-				text-align: center;
+				padding: 0 15px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				font-size: 28px;
 				line-height: 34px;
+				font-family: $OSLight;
 				color: #fff;
 				@include transition-element (all);
 			}
@@ -1031,21 +1069,34 @@ ul{
 
 			&.benefit1{
 				background: url(../img/img08.jpg) no-repeat 0 0;
+				background-size: cover;
 			}
 			&.benefit2{
 				background: url(../img/img09.jpg) no-repeat 0 0;
+				background-size: cover;
 			}
 			&.benefit3{
 				background: url(../img/img10.jpg) no-repeat 0 0;
+				background-size: cover;
 			}
 			&.benefit4{
 				background: url(../img/img11.jpg) no-repeat 0 0;
+				background-size: cover;
 			}
 			&.benefit5{
 				background: url(../img/img12.jpg) no-repeat 0 0;
+				background-size: cover;
 			}
 
-			&.big{width: 49.53%;}
+			&.big{
+				width: 49.53%;
+				.title {
+					right: 28%;
+					left: 28%;
+					bottom: 25%;
+					top: 25%;
+				}
+			}
 
 			&:hover {
 				-webkit-filter: grayscale(0%);
@@ -1067,9 +1118,6 @@ ul{
 		}
 	}
 }
-
-
-
 
 .transperent-btn {
 	display: inline-block;
@@ -2077,6 +2125,10 @@ h1 {
 }
 
 @media (max-width: 1320px) {
+	.index #header .holder {
+		padding-right: 15px;
+		padding-left: 35px;
+	}
 	#footer {
 
 		p{
@@ -2202,6 +2254,11 @@ h1 {
 	#header .main-nav {margin: 0;}
 	#header ul.nav.navbar-nav,
 	#header .log-data {margin-top: 14px;}
+	.navbar-collapse{
+		border: none !important;
+		box-shadow: none !important;
+		margin: 0 !important;
+	}
 } 
 
 @media (max-width: 945px) {
@@ -2220,6 +2277,14 @@ h1 {
 		margin-top: 149px;
 	}
 }
+
+@media (max-width: 960px) {
+	.index .benefit-list li .title {
+		font-size: 22px;
+    	line-height: 28px;
+	}
+}
+
 @media (max-width: 920px) {
 	#header .main-nav {
 		width: 100%;
@@ -2366,6 +2431,8 @@ h1 {
 			}
 		} 
 	}
+
+	.index .join-section .hold-carousel .container{padding: 50px 100px 20px;}
 }
 
 @media (max-width: 850px) {
@@ -2417,6 +2484,20 @@ h1 {
    			margin: 15px auto;
 	    }
 	}
+	.index .join-section .hold-carousel .container{padding: 30px 80px 20px;}
+	.index .join-section .carousel .carousel-inner>.item {
+	    height: 430px;
+	    max-height: 430px;
+	}
+	.index .join-section .hold-carousel .container{background-size: cover;}
+	.index .join-section .hold-carousel .title{
+		font-size: 38px;
+    	line-height: 40px;
+    	margin-bottom: 40px;
+
+    	&:before {margin-bottom: 10px;}
+	}
+	.index .join-section .hold-carousel cite{margin-bottom: 30px;}
 }
 
 @media (max-width: 768px) {
@@ -2547,9 +2628,32 @@ h1 {
 	.carousel-control.right {
 		right: -5%;
 	}
+
+	.index .join-section .carousel .carousel-inner>.item {
+	    height: auto !important;
+	    max-height: auto !important;
+	}
+
+	.index .join-section .hold-carousel .title{
+		font-size: 38px;
+    	line-height: 40px;
+    	margin-bottom: 20px;
+
+    	&:before {margin-bottom: 10px;}
+	}
+	.index .join-section .hold-carousel cite{margin-bottom: 30px;}
 }
 @media (max-width: 675px) {
 	.w1 {padding-bottom: 360px;}
+	.index .advantages-list{
+		padding-left: 15px;
+		padding-right: 15px;
+
+		li{
+			width: 100%;
+			margin: 0 0 15px;
+		}
+	} 
 	#footer {
 		height: 360px;
 		margin-top: -360px;
@@ -2638,7 +2742,34 @@ h1 {
 		font-size: 22px;
     	line-height: 29px;
 	}
+
+	.index .benefit-list li{
+		width: 80%;
+	    margin: 0 auto 15px;
+	    float: none;
+
+	    &.big{
+	    	width: 80%;
+
+	    	.title{
+	    		right: 18.5%;
+			    left: 18.5%;
+			    bottom: 25%;
+			    top: 25%;
+	    	}
+	    }
+	}
+	.index .join-section .hold-carousel .title:after{
+		margin-top: 20px; 
+	}
+	.index .join-section .hold-carousel cite{
+		font-size: 20px;
+    	line-height: 28px;
+	}
+	.index .join-section{padding-bottom: 50px;}
+	.index section .hold-title{padding-top: 10px;}
 }
+
 @media (max-width: 600px) {
 	body{
 		background-size: 100% 170px;
@@ -2654,8 +2785,34 @@ h1 {
 	.block.big .hold-count-info .item{margin: 0 3px;}
 	
 	.blog #header ul.nav.navbar-nav li {width: 37%;}
+	.index .join-section .hold-carousel .container {padding: 30px 50px 20px;}
+	.index .join-section .hold-carousel .carousel-control.left{left: 3%;}
+	.index .join-section .hold-carousel .carousel-control.right{
+		right: 3%;
+    	left: auto;
+	}
 }
 
+@media (max-width: 460px) {
+	.index .join-section .user-box{width: 300px;}
+	.index .join-section .hold-img{
+		width: 70px;
+		height: 70px;
+		margin-right: 10px;
+	}
+	.index .join-section .wrap{
+		padding-left: 10px;
+		height: 70px;
+	}
+	.index .join-section .name{
+		font-size: 16px;
+		line-height: 18px;
+	}
+	.index .join-section .member{
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
 
 @media (max-width: 425px) {
 	#content {
@@ -2750,6 +2907,11 @@ h1 {
 		&:before{border: none;}
 	}
 	#content .hold-program .tab-content .tab-pane{padding-bottom: 0;}
+	.index .join-section .hold-carousel .container {padding: 30px 25px 20px;}
+	.index .join-section .hold-carousel cite {
+	    padding-left: 18px;
+	    padding-right: 18px; 
+	}
 }
 
 @media (max-width: 400px) {
