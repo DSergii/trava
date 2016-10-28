@@ -11,7 +11,7 @@ var TravaApp = {
 
 		this.tab = $('.nav-tabs').tab();
 		this.badgesCarousel = $('#badgesLvL1, #badgesLvL2, #badgesLvL3, #badgesLvL4').carousel({interval: false});
-		this.testimonialsCarousel = $('#testimonials').carousel({interval: false}); //5000
+		this.testimonialsCarousel = $('#testimonials').carousel({interval: 5000});
 		this.scrollTop();
 		this.dropDown();
 		this.checkitem();
@@ -151,8 +151,11 @@ var TravaApp = {
 		var header = $('#header'),
 			headerH = header.height(),
 			img = new Image;
-			img.src = $('body.index').css('backgroundImage').replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
-		console.info('headerH ', headerH);
+			video = $('.video-box');
+
+		if( video.length ) {
+			img.src = video.css('backgroundImage').replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+		}
 
 		$(window).scroll(function(){
 			if($(this).scrollTop() + (headerH * 2) > img.height){
