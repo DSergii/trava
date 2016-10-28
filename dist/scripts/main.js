@@ -17,6 +17,35 @@ var TravaApp = {
 		this.checkitem();
 		this.resize();
 		this.headerGradient();
+		
+		this.options = {
+			loop:true,
+		    margin:0,
+		    responsiveClass:true,
+		    items: 5,
+		    margin: 10,
+		    dots: false,
+		    responsive:{
+		        320:{
+		            items:1,
+		            nav:false
+		        },
+		        425:{
+		        	items:1,
+		            nav:false
+		        },
+		        768:{
+		            items:3,
+		            nav:true
+		        },
+		        1500:{
+		            items:5,
+		            nav:true,
+		            loop:false
+		        }
+		    }
+		}
+		this.carousel = $('.owl-carousel').owlCarousel(this.options);
 	},
 
 	scrollTop: function() {
