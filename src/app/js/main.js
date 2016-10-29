@@ -47,7 +47,7 @@ var TravaApp = {
 		}
 		this.carousel = $('.owl-carousel').owlCarousel(this.options);
 		this.showPlaylist();
-		this.videoList = $('.video-list').customScrollbar({updateOnWindowResize:true});
+		this.videoList = $('.media-tab .video-list').customScrollbar({updateOnWindowResize:true});
 		//this.videoPlayList = $('.playlist').customScrollbar();
 	},
 
