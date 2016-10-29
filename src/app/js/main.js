@@ -46,6 +46,9 @@ var TravaApp = {
 		    }
 		}
 		this.carousel = $('.owl-carousel').owlCarousel(this.options);
+		this.showPlaylist();
+		this.videoList = $('.video-list').customScrollbar({updateOnWindowResize:true});
+		//this.videoPlayList = $('.playlist').customScrollbar();
 	},
 
 	scrollTop: function() {
@@ -193,6 +196,34 @@ var TravaApp = {
 				header.removeClass('fill');
 			}
 			
+		});
+	},
+
+	showPlaylist: function() {
+		var hold = $('.v-container')
+			btn = null,
+			list = null;
+
+		hold.each(function() {
+			var _this = $(this);
+			btn = _this.find('.add');
+			
+
+			btn.click(function() {
+				$(this).toggleClass('active');
+				list = _this.find('.playlist');
+				
+				if( !_this.hasClass('open') ) {
+					list.slideDown(300, function(){
+						$(this).customScrollbar();
+						_this.addClass('open');
+					});
+				}else {
+					list.slideUp(300, function(){
+						_this.removeClass('open');
+					});
+				}
+			});
 		});
 	}
 }

@@ -78,7 +78,7 @@ gulp.task('webserver', function() {
 	});
 // network access - use cmd -> ipconfig -> IPv4 -> 192.168.20.234 Example: http://192.168.20.234:8000/dashboard.html (8000 local port)
 gulp.task('build', [
-	'bower',
+	//'bower',
     'sass',
     'fonts',
     'image',
