@@ -2671,7 +2671,7 @@ h1 {
 }
 
 .holder-box {
-	padding: 30px 36px 10px;
+	padding: 30px 30px 10px;
 	margin-bottom: 10px;
 
 	.hold-title{
@@ -2695,14 +2695,21 @@ h1 {
 }
 
 .libary-video-list{
-	margin: 0 0 20px;
+	margin: 0 0 50px;
 	padding: 0;
 	overflow: hidden;
 
 	li {
 		float: left;
-		width: 263px;
-		margin-right: 31px;
+		width: 30.65%;
+		margin-right: 4%;
+		margin-bottom: 28px;
+
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 
 		&:last-child{margin: 0;}
 	}
@@ -3431,6 +3438,10 @@ h1 {
 	}
 	.blog #content #sidebar {
 		padding: 30px 0 20px 0;
+		&.side-info{padding: 30px 0 20px 0;}
+	}
+	.general-box .select-horse{
+		width: 100%;
 	}
 	.blog #content #sidebar h2 {
 		text-align: center;
@@ -3665,6 +3676,17 @@ h1 {
     	left: auto;
 	}
 	.v-info{font-size: 14px;}
+	.general-box .select-horse .main-container{margin-bottom: 10px;}
+	.libary-video-list{
+		margin: 0 0 30px;
+
+		li{
+			float: none;
+			width: 100%;
+			margin: 0 0 15px;
+		}
+	}
+	.holder-box{padding: 10px 15px 10px;}
 }
 
 @media (max-width: 460px) {
