@@ -206,7 +206,7 @@ var TravaApp = {
 
 		hold.each(function() {
 			var _this = $(this);
-			btn = _this.find('.add');
+			btn = _this.find('.btn-add');
 			
 
 			btn.click(function() {

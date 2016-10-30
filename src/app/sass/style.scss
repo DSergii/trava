@@ -186,11 +186,21 @@ a:hover {text-decoration: none;}
 			float: right;
 			width: 28.5%;
 			padding: 46px 1.5% 20px 3%;
+
+			&.side-info{padding: 0 0 20px 1.75%;}
   
 			h2{
 				font-size: 27px;
 				line-height: 29px;
 				font-family: $OSLight;
+			}
+
+			h3{
+				font-size: 25px;
+				line-height: 27px;
+				color: #303133;
+				font-family: $OSLight;
+				margin: 0 0 22px;
 			}
 
 			.month-list {
@@ -1827,9 +1837,8 @@ h1 {
 			display: block;
 			margin: -57px auto 15px;
  
-			&.active {
-				background-position: -72px -41px;
-			}
+			&.active {background-position: -72px -41px;}
+			&.blue {background-position: -408px -38px;}
 		}
 	}
 }
@@ -2463,11 +2472,11 @@ h1 {
 	}
 }
 
-.hold-playlist {
+.general-box {
 	overflow: hidden;
 	width: 100%;
 
-	.playlist-box{
+	.main-container{
 		float: left;
 		width: 71.5%;
 		padding: 30px 36px;
@@ -2483,6 +2492,17 @@ h1 {
 				display: block;
 				margin-bottom: 10px;
 			}
+		}
+	}
+
+	.select-horse{
+		float: left;
+		width: 71.5%;
+
+		.main-container{
+			float: none;
+			width: 100%;
+			margin-bottom: 40px;
 		}
 	}
 
@@ -2573,6 +2593,118 @@ h1 {
 			background: #ffc746;
 			color: #3e3e3e;
 		}
+	}
+}
+
+.side-info-box{
+	background: #fff;
+	padding: 21px 20px;
+	margin-bottom: 16px;
+
+	h3{padding-left: 12px;}
+
+	&.first{padding: 48px 15px 20px 22px;}
+
+	.badges-box {
+		border: none;
+		.badge-item{
+			width: 50%;
+			padding-bottom: 16px;
+		}
+	}
+	.view-all{float: right;}
+	.hold-btn{margin-bottom: 10px;}
+	.hold-img{
+		width: 100%;
+		margin-bottom: 30px;
+
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+	p{margin-bottom: 15px;}
+}
+
+.info-box-list {
+	padding: 0;
+	margin: 0 0 20px;
+	border-bottom: 1px solid #dedede;
+
+	li {
+		border-top: 1px solid #dedede;
+		padding: 15px 10px;
+		font-size: 15px;
+		line-height: 18px;
+
+		p{margin-bottom: 10px;}
+	}
+
+	.date{
+		color: #a4a4a4;
+		font-size: 14px;
+		line-height: 16px;
+	}
+}
+
+.view-all {
+	font-size: 16px;
+	line-height: 20px;
+	font-family: $OS_Semibold;
+	text-transform: uppercase;
+	color: #616161;
+	padding-right: 28px;
+	position: relative;
+	@include transition-element (color);
+	&:hover{color: #ffc746;}
+	
+	&:after {
+		content: '';
+		background: url(../img/sprite.png) no-repeat -51px -104px;
+		width: 20px;
+		height: 19px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.holder-box {
+	padding: 30px 36px 10px;
+	margin-bottom: 10px;
+
+	.hold-title{
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	p{
+		font-size: 15px;
+		line-height: 18px;
+		color: #787878;
+		margin-bottom: 30px;
+	}
+
+	.hold-btn{
+		padding: 10px 0;
+		border-top: 1px solid #d8d9da;
+		margin-bottom: 0;
+
+		.view-all{float: right;}
+	}
+}
+
+.libary-video-list{
+	margin: 0 0 20px;
+	padding: 0;
+	overflow: hidden;
+
+	li {
+		float: left;
+		width: 263px;
+		margin-right: 31px;
+
+		&:last-child{margin: 0;}
 	}
 }
 
@@ -3360,7 +3492,7 @@ h1 {
 		}
 	}
 	.media-tab .video{width: 100%;}
-	.hold-playlist .playlist-box{
+	.general-box .main-container{
 		width: 100%;
 		float: none;
 	}
@@ -3509,7 +3641,7 @@ h1 {
 		float: none;
 		margin-bottom: 15px;
 	}
-	.hold-playlist .full-video{
+	.general-box .full-video{
 		padding: 0 0 30px;
 	}
 }
@@ -3680,12 +3812,12 @@ h1 {
 	}
 	.hold-browse-title .title,
 	.hold-browse-title .items {font-size: 16px;}
-	.hold-playlist .playlist-box{
+	.general-box .main-container{
 		padding: 25px 15px 15px;
 	}
-	.hold-playlist .share{float: none;}
-	.hold-playlist .hold-btn{text-align: center;}
-}
+	.general-box .share{float: none;}
+	.general-box .hold-btn{text-align: center;}
+} 
 
 @media (max-width: 400px) {
 
