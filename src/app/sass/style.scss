@@ -406,13 +406,11 @@ a:hover {text-decoration: none;}
 			}
 		} 
 	}
+	.navbar {margin: 0;}
+	.navbar-nav {margin: 0;}
 
-	.navbar {
-		margin: 0;
-	}
-
-	.navbar-nav {
-		margin: 0;
+	.navbar-collapse.in{
+		overflow: inherit;
 	}
 
 	ul.nav.navbar-nav {
@@ -470,7 +468,10 @@ a:hover {text-decoration: none;}
     			width: 100%;
 			}
 
-			&:hover {box-shadow: inset 0 -3px 0 0 #ffc745;}
+			&:hover {
+				box-shadow: inset 0 -3px 0 0 #ffc745;
+				.horse-list {height: 186px;}
+			}
 		}
 		.hourse-nav {
 			z-index: 10;
@@ -664,6 +665,9 @@ a:hover {text-decoration: none;}
 	position: absolute;
 	right: 0;
 	width: 263px;
+	height: 0;
+	overflow: hidden;
+	@include transition-element (height);
 
 	>li{
 		border-top: 1px solid #585858;
@@ -674,7 +678,7 @@ a:hover {text-decoration: none;}
 			font-size: 17px;
 			line-height: 19px;
 			color: #c8c8c8;
-			padding: 25px 35px 25px 79px;
+			padding: 23px 35px 18px 77px;
 			position: relative;
 			@include transition-element (color);
 
@@ -704,6 +708,7 @@ a:hover {text-decoration: none;}
 				&:before{
 					width: 20px;
 					height: 19px;
+					left: 29px;
 					background-position: -77px -100px;
 				}
 			}
@@ -3772,12 +3777,8 @@ h1 {
 	    padding: 55px 15px 37px;
 	    margin-top: 105px;
 	}
-	.forum-content {
-		padding: 22px 3%;
-	}
-	.block-holder {
-	    padding: 20px 0% 1px;
-	}
+	.forum-content {padding: 22px 3%;}
+	.block-holder {padding: 20px 0% 1px;}
 
 	.block.big .hold-count-info .item span{
 		font-size: 12px;
@@ -3879,11 +3880,21 @@ h1 {
 	}
 	.hold-browse-title .title,
 	.hold-browse-title .items {font-size: 16px;}
-	.general-box .main-container{
-		padding: 25px 15px 15px;
-	}
+	.general-box .main-container{padding: 25px 15px 15px;}
 	.general-box .share{float: none;}
 	.general-box .hold-btn{text-align: center;}
+	.horse-list {
+		width: 240px;
+		li {
+			a{
+				padding-left: 60px; 
+				&:before{left: 16px;}
+				&.add{
+					&:before{left: 22px;}
+				}
+			}
+		}
+	}
 } 
 
 @media (max-width: 400px) {
@@ -3915,9 +3926,7 @@ h1 {
 	.v-info {
 	    padding-top: 8px;
 	    padding-bottom: 8px;
-	    .duration {
-		    margin-top: 30px;
-		}
+	    .duration {margin-top: 30px;}
 	}
 
 }
