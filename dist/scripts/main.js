@@ -48,6 +48,7 @@ var TravaApp = {
 		this.carousel = $('.owl-carousel').owlCarousel(this.options);
 		this.showPlaylist();
 		this.videoList = $('.media-tab .video-list').customScrollbar({updateOnWindowResize:true});
+		this.playVideo();
 		//this.videoPlayList = $('.playlist').customScrollbar();
 	},
 
@@ -180,15 +181,10 @@ var TravaApp = {
 	headerGradient: function() {
 		var header = $('#header'),
 			headerH = header.height(),
-			img = new Image;
-			video = $('.video-box');
-
-		if( video.length ) {
-			img.src = video.css('backgroundImage').replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
-		}
+			video = $('.video-box').height();
 
 		$(window).scroll(function(){
-			if($(this).scrollTop() + (headerH * 2) > img.height){
+			if($(this).scrollTop() + (headerH * 2) > video){
 				header.addClass('fill');
 			}else{
 				header.removeClass('fill');
@@ -223,5 +219,16 @@ var TravaApp = {
 				}
 			});
 		});
+	},
+
+	playVideo: function() {
+		var video = $('#video'),
+			playBtn = $('.video-btn');
+
+		playBtn.click(function(){
+			video[0].play();
+			return false;
+		});
+
 	}
 }
