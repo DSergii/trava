@@ -56,8 +56,6 @@ var TravaApp = {
 
 		btnUp.click(function(e) {
 			e.preventDefault();
-			var that = $(this);
-			
 			$('body, html').animate({scrollTop: 0}, 800);
 		});
 	},
