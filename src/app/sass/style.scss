@@ -422,9 +422,11 @@ a:hover {text-decoration: none;}
 		width: 10%;
 		
 		>li{
-			float: right;
+			float: left;
 			position: relative;
 			padding: 0 9px 0 12px;
+
+			.text{display: none;}
 		}
 
 		&:before {
@@ -3471,7 +3473,7 @@ h1 {
 	#main.index .join-section .hold-carousel cite{margin-bottom: 30px;}
 	.horse-name {
 		&:before,
-		&:after{right: 25px;}
+		&:after{right: 2px;}
 	}
 }
 
@@ -4003,6 +4005,99 @@ h1 {
 	}
 	.welcome-box {top: 110px;}
 	.video-box video{min-height: auto;}
+	#header.mobile-menu {
+		.main-nav {
+			padding-left: 10%;
+			margin: 0;
+			li{
+				width: 100%;
+				text-align: left;
+			}
+		}
+		.log-data {
+			padding-top: 0;
+			padding-left: 10%;
+			margin: 0;
+			width: 150px;
+			position: relative;
+			min-height: 150px;
+
+			>li{
+				padding-left: 45px;
+
+				a{
+					color: #d2d2d2;
+					span{
+						margin-left: -83px;
+    					margin-right: 14px;
+
+    					&.text{
+    						display: block;
+    						margin: 0;
+    						line-height: 32px;
+    					}
+					}
+				}
+			}
+
+			.user{height: 24px;}
+
+			&:before{content: none;}
+
+			.hourse-nav{
+
+				.horse-name{
+					padding: 8px 11px 11px 22px;
+					line-height: 26px;
+				}
+				&:before{content: none;}
+				&:after{top:12px;}
+			}
+			.user-nav{
+				height: 46px;
+				.user{
+					display: inline-block;
+				}
+			}
+		}
+
+		ul.nav.navbar-nav {
+			position: absolute;
+			top: 0;
+			right: 50px;
+			width: 135px;
+			margin: 0;
+			padding: 0;
+
+			li{width: 100%;}
+
+			li:last-child{display: none;}
+		}
+
+		.chat{
+			border: none;
+			padding: 6px 30px 7px 2px;
+			&:after{
+				left: auto;
+				right: 10px;
+
+			}
+		}
+	}
+
+	.horse-list{
+		left: 0;
+		right: auto;
+
+		li{
+			border: none;
+			a{
+				padding: 10px;
+				&:after,
+				&:before{content: none;}
+			}
+		}
+	}
 } 
 
 @media (max-width: 400px) {
